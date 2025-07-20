@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Greetings!", "Nice to meet you!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you later", "farewell", "cya"],
+      "responses": ["Goodbye!", "See you!", "Bye for now!", "Take care!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "appreciate it"],
+      "responses": ["You're welcome!", "No problem!", "Glad to help!", "Anytime!"]
+    },
+    {
+      "tag": "university_location",
+      "patterns": ["where is the university located", "location of campus", "address of university", "where are you located"],
+      "responses": ["Our main campus is located at 123 University Ave, Tech City, State, 12345.", "You can find us at 123 University Avenue, in the heart of Tech City."]
+    },
+    {
+      "tag": "admission_process",
+      "patterns": ["how to apply", "admission requirements", "application process", "what do I need to apply"],
+      "responses": ["You can find detailed admission information on our official website under the 'Admissions' section.", "The application process involves submitting an online form, academic transcripts, and letters of recommendation. Please check our website for specific deadlines."]
+    },
+    {
+      "tag": "courses_offered",
+      "patterns": ["what courses do you offer", "list of programs", "available majors", "what can I study here"],
+      "responses": ["We offer a wide range of undergraduate and postgraduate programs across various disciplines. Please visit our academic catalog for a full list.", "Our popular programs include Computer Science, Electrical Engineering, Business Administration, and Arts & Humanities."]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": ["how can I contact you", "phone number", "email address", "support contact"],
+      "responses": ["You can reach our admissions office at (555) 123-4567 or email us at info@university.edu.", "For general inquiries, please call (555) 123-4567."]
+    },
+    {
+      "tag": "hours_operation",
+      "patterns": ["what are your hours", "when are you open", "opening times"],
+      "responses": ["Our offices are open Monday to Friday, 9 AM to 5 PM.", "We are available during regular business hours, 9 AM to 5 PM, weekdays."]
+    }
+  ]
+}

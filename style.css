@@ -1,0 +1,168 @@
+/* Basic Reset and Font */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Chatbot Container Styling */
+.chatbot-container {
+    height: 80vh; /* Adjust height as needed */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Header Styling */
+.header {
+    background-color: #3B82F6; /* Tailwind blue-600 */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Chat Window Styling */
+#chat-window {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #F9FAFB; /* Tailwind gray-50 */
+    display: flex;
+    flex-direction: column; /* Messages stack vertically */
+}
+
+/* Message Bubbles */
+.message {
+    max-width: 70%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem; /* rounded-lg */
+    margin-bottom: 0.75rem; /* mb-3 */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+.user-message {
+    background-color: #DBEAFE; /* Tailwind blue-100 */
+    color: #1E40AF; /* Tailwind blue-800 */
+    align-self: flex-end; /* Align to the right */
+    border-bottom-right-radius: 0; /* Make the corner flat on the user's side */
+}
+
+.bot-message {
+    background-color: #E0F2F7; /* A light teal/cyan for bot */
+    color: #0F766E; /* A darker teal for bot text */
+    align-self: flex-start; /* Align to the left */
+    border-bottom-left-radius: 0; /* Make the corner flat on the bot's side */
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    color: #6B7280; /* Tailwind gray-500 */
+    font-size: 0.9rem;
+}
+
+.loading-indicator::after {
+    content: '...';
+    animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow:
+            .25em 0 0 rgba(0,0,0,0),
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    40% {
+        color: #6B7280;
+        text-shadow:
+            .25em 0 0 rgba(0,0,0,0),
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    60% {
+        text-shadow:
+            .25em 0 0 #6B7280,
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    80%, 100% {
+        text-shadow:
+            .25em 0 0 #6B7280,
+            .5em 0 0 #6B7280;
+    }
+}
+
+/* Input Area Styling */
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #E5E7EB; /* Tailwind gray-200 */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #D1D5DB; /* Tailwind gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#user-input:focus {
+    border-color: #3B82F6; /* Tailwind blue-500 */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+#send-button {
+    margin-left: 0.75rem; /* ml-3 */
+    padding: 0.75rem 1.25rem; /* px-5 py-3 */
+    background-color: #3B82F6; /* Tailwind blue-600 */
+    color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    border: none;
+    font-weight: 600; /* font-semibold */
+}
+
+#send-button:hover {
+    background-color: #2563EB; /* Tailwind blue-700 */
+}
+
+#send-button:active {
+    transform: translateY(1px); /* Slight press effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .chatbot-container {
+        height: 95vh;
+        width: 100%;
+        max-width: none;
+        border-radius: 0; /* Full screen on small devices */
+    }
+    .message {
+        max-width: 85%;
+    }
+    .input-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #user-input {
+        margin-bottom: 0.5rem;
+    }
+    #send-button {
+        margin-left: 0;
+        width: 100%;
+    }
+}
